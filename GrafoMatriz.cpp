@@ -1,5 +1,7 @@
 #include "GrafoMatriz.h"
 
+using  namespace std;
+
 typedef int * pint;  // para el dimensionamiento de la matriz
 
 GrafoMatriz::GrafoMatriz(int mx) {

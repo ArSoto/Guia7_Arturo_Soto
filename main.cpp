@@ -5,9 +5,11 @@ void menu(GrafoMatriz*);
 
 void ordenDij(GrafoMatriz *);
 
-int main(int n){
+int main(){
 
 
+    int n;
+    cin >> n;
     string nombre;
     GrafoMatriz *grafo;
 
