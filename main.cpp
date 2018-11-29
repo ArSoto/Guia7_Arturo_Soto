@@ -40,7 +40,7 @@ void menu (GrafoMatriz *grafo){
         cout << endl;
         cout << "[1] Agregar Vertice" << endl;
         cout << "[2] Agregar arco (o arista) entre Vertices" << endl;
-        cout << "[3] Dijkstra" << endl;
+        cout << "[3] Prim" << endl;
         cout << "[4] Generar grafico" << endl;
         cout << "[9] Salir" << endl;
 
