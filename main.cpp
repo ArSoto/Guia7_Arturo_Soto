@@ -1,12 +1,14 @@
 #include <iostream>
-#include "GrafoMatriz.h"
+#include "Prim.h"
 
 
 using namespace std;
 
 void menu(GrafoMatriz*);
 
-void ordenDij(GrafoMatriz *);
+void AlgoritmoPrim(GrafoMatriz*);
+
+
 
 int main(){
 
@@ -46,6 +48,13 @@ void menu (GrafoMatriz *grafo){
 
         cin >> opcion;
 
+        if( !cin.good() ) {
+            cin.clear();
+            cin.ignore();
+            opcion = 0;
+        }
+
+
         switch (opcion){
 
             case 1:
@@ -67,7 +76,8 @@ void menu (GrafoMatriz *grafo){
 
 
             case 3:
-                ordenDij(grafo);
+
+                AlgoritmoPrim(grafo);
 
                 break;
 
@@ -88,4 +98,25 @@ void menu (GrafoMatriz *grafo){
 
 
 }
+
+void AlgoritmoPrim(GrafoMatriz *grafo1){
+
+     Prim prim(*grafo1);
+     int e, r;
+
+     int **a;
+
+     e = prim.arbolExpansionPrim(*grafo1);
+
+    r= prim.OlongMin();
+
+    a = prim.OT();
+
+
+
+
+}
+
+
+
 

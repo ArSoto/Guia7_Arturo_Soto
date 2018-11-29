@@ -21,7 +21,7 @@ GrafoMatriz::GrafoMatriz(int mx) {
 
 void GrafoMatriz::nuevoVertice (string nom){
 
-    bool esta = numVertice(nom) >= 0; //si el Vertice se encuentra ya en el grafo
+    bool esta = numVertice(nom) < infinito ; //si el Vertice se encuentra ya en el grafo
     if (!esta){
         if(numVerts < maxVerts) {    // comprueba que no sobrepase el máximo
 

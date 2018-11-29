@@ -15,7 +15,7 @@ protected:
     int numVerts;       // número de vértices actual
     Vertice * verts;    // array de vértices
     int ** matriz;       // matriz de adyacencia
-    int infinito;
+
 
 
 public:
@@ -25,7 +25,7 @@ public:
     //metodos encargados de obtener el número de vértices
     // y de cambiar el número de vértices de la clase
 
-
+    int infinito;
 
 
     //agrega nuevo vertice
