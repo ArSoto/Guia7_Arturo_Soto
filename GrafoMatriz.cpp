@@ -14,7 +14,7 @@ GrafoMatriz::GrafoMatriz(int mx) {
     for (int i = 0; i < mx; i++) {       //crea y prepara la matriz;
         matriz[i] = new int[mx];
         for (int j = 0; j <mx ; ++j) {
-            (i==j) ? matriz[i][j] = 0 : matriz[i][j] = infinito;  //si <i> es igual a <j> entonces matriz[i][j] = 0  de lo contrario es infinito
+            matriz[i][j] = (i==j) ?  0 : infinito;  //si <i> es igual a <j> entonces matriz[i][j] = 0  de lo contrario es infinito
         }
     }
 
@@ -80,7 +80,7 @@ void GrafoMatriz::nuevoArco(string a, string b, int valor) {
             matriz[va][vb] = valor;
             matriz[vb][va] = valor;
         } else{
-            cout << "Vertice ya existente entre los nodos" << endl;
+            cout << "arista ya existente entre los nodos" << endl;
         }
     }
 }
@@ -143,6 +143,7 @@ void GrafoMatriz::auxImprimir(ofstream &archivo) {
 int GrafoMatriz::OnumeroDeVertices() {
     return numVerts;
 }
+
 
 
 

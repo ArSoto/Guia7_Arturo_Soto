@@ -44,6 +44,8 @@ public:
 
     void imprimir();
 
+    string OnombreVertice(int);
+
 
 
 

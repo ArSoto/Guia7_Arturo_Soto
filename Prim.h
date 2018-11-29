@@ -15,7 +15,7 @@ protected :
     private:
     int n;
     int INFINITO;
-    ofstream *archivo2;
+
 
 
 public:
@@ -27,7 +27,11 @@ public:
     int arbolExpansionPrim(GrafoMatriz g);
     // algoritmo de Prim
 
-    void imprimirInicio();
+    void imprimirInicio(ofstream &);
+
+    void imprimirCerrar(ofstream &);
+
+
 
 
 
