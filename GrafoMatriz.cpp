@@ -1,7 +1,5 @@
 #include "GrafoMatriz.h"
 
-using  namespace std;
-
 typedef int * pint;  // para el dimensionamiento de la matriz
 
 GrafoMatriz::GrafoMatriz(int mx) {
@@ -9,12 +7,14 @@ GrafoMatriz::GrafoMatriz(int mx) {
     verts = new Vertice[mx] ;
     matriz = new pint[mx];
     numVerts = 0;
+    infinito = 0XFFFF;  // valor maximo que puede alcanzar el algoritmo
+
 
 
     for (int i = 0; i < mx; i++) {       //crea y prepara la matriz;
         matriz[i] = new int[mx];
         for (int j = 0; j <mx ; ++j) {
-            (i==j) ? matriz[i][j] = 0 : matriz[i][j] = -1;
+            (i==j) ? matriz[i][j] = 0 : matriz[i][j] = infinito;  //si <i> es igual a <j> entonces matriz[i][j] = 0  de lo contrario es infinito
         }
     }
 }
@@ -24,6 +24,7 @@ void GrafoMatriz::nuevoVertice (string nom){
     bool esta = numVertice(nom) >= 0; //si el Vertice se encuentra ya en el grafo
     if (!esta){
         if(numVerts < maxVerts) {    // comprueba que no sobrepase el máximo
+
 
             Vertice v;
             v.nombre = nom;
@@ -51,7 +52,7 @@ int GrafoMatriz::numVertice(string v){
             i++;
         }
     }
-    return (i < numVerts) ? i : -1 ;
+    return (i < numVerts) ? i : infinito;
 }
 
 
@@ -60,6 +61,7 @@ void GrafoMatriz::nuevoArco(string a, string b, int valor) {
     va = numVertice(a);
     vb = numVertice(b);
     matriz[va][vb] = valor;
+    matriz[vb][va] = valor;
 }
 
 

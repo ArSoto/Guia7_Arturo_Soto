@@ -3,4 +3,4 @@ project(Guia7_Arturo_Soto)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Guia7_Arturo_Soto main.cpp GrafoMatriz.cpp GrafoMatriz.h Dijkstra.cpp Dijkstra.h)
+add_executable(Guia7_Arturo_Soto main.cpp GrafoMatriz.cpp GrafoMatriz.h Prim.cpp Prim.h)

@@ -1,5 +1,8 @@
 #include <iostream>
-#include "Dijkstra.h"
+#include "GrafoMatriz.h"
+
+
+using namespace std;
 
 void menu(GrafoMatriz*);
 
@@ -66,7 +69,6 @@ void menu (GrafoMatriz *grafo){
             case 3:
                 ordenDij(grafo);
 
-
                 break;
 
             case 4:
@@ -87,38 +89,3 @@ void menu (GrafoMatriz *grafo){
 
 }
 
-void ordenDij(GrafoMatriz *grafo) {
-
-    int origen;
-    int aux;
-    int *distancias;
-    string vertice;
-
-    cout <<" nombre del nodo a consultar" << endl;
-    cin >> vertice;
-
-    origen = grafo->numVertice(vertice);
-
-    CaminoMinimo caminoMinimo(origen, grafo); //inicializamos variable
-
-    caminoMinimo.Dijkstra(*grafo, origen); //calcula la distancia de los vertices con el origen
-
-    distancias = caminoMinimo.OdistanciaMinima();
-
-
-    for (int i = 0; i <grafo->OnumeroDeVertices() ; ++i) {
-
-        if(distancias[i] > 0)
-        cout << "La distancia minima entre el vertice " << vertice << " a " << grafo->nombreVertice(i) <<
-        " es " << distancias[i] << endl;
-
-    }
-    cout << endl;
-
-
-
-
-
-
-
-}

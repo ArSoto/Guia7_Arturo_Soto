@@ -1,6 +1,7 @@
 #include "Vertice.cpp"
 #include <fstream>
 #include "string"
+#include <iostream>
 using namespace std;
 
 #ifndef GRAFOMATRIZ_H
@@ -14,6 +15,8 @@ protected:
     int numVerts;       // número de vértices actual
     Vertice * verts;    // array de vértices
     int ** matriz;       // matriz de adyacencia
+    int infinito;
+
 
 public:
     //Constructores
