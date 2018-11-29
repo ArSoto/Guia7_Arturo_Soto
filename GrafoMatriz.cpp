@@ -58,17 +58,32 @@ int GrafoMatriz::numVertice(string v){
 
 void GrafoMatriz::nuevoArco(string a, string b, int valor) {
     int va, vb;
-    va = numVertice(a);
-    vb = numVertice(b);
-    matriz[va][vb] = valor;
-    matriz[vb][va] = valor;
+
+    if (a == b) {
+        cout << "son el mismo vertice"<< endl;
+        return;
+
+    } else {
+
+
+        va = numVertice(a);
+        vb = numVertice(b);
+
+        if (matriz[va][vb] == infinito ) {
+
+            matriz[va][vb] = valor;
+            matriz[vb][va] = valor;
+        } else{
+            cout << "Vertice ya existente entre los nodos" << endl;
+        }
+    }
 }
 
 
 int GrafoMatriz::Ovalor( int va, int vb) {
     if (va < 0 || vb < 0 || va >= numVerts || vb >= numVerts){
        cout << "hay camino entre esos vetores"<< endl;
-        return -1;
+        return infinito;
     }
     return matriz[va][vb];
 }

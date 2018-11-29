@@ -9,9 +9,8 @@ Prim::Prim(GrafoMatriz g)
 
     longMin = 0;
 
-    typedef int * pint;
 
-    T = new pint [n];
+    T = new int *[n];
 
     for ( int i = 0 ; i < n; i++) {
 

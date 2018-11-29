@@ -112,6 +112,8 @@ void AlgoritmoPrim(GrafoMatriz *grafo1){
 
     a = prim.OT();
 
+    
+
 
 
 
