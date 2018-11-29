@@ -17,6 +17,8 @@ GrafoMatriz::GrafoMatriz(int mx) {
             (i==j) ? matriz[i][j] = 0 : matriz[i][j] = infinito;  //si <i> es igual a <j> entonces matriz[i][j] = 0  de lo contrario es infinito
         }
     }
+
+
 }
 
 void GrafoMatriz::nuevoVertice (string nom){
@@ -61,13 +63,17 @@ void GrafoMatriz::nuevoArco(string a, string b, int valor) {
 
     if (a == b) {
         cout << "son el mismo vertice"<< endl;
-        return;
 
     } else {
 
 
         va = numVertice(a);
         vb = numVertice(b);
+
+        if (va == infinito || vb == infinito){
+            cout << "uno de los vertices no existe " << endl;
+            return;
+        }
 
         if (matriz[va][vb] == infinito ) {
 
@@ -103,6 +109,7 @@ void GrafoMatriz::imprimir() {
     archivo << "digraph G {" << endl ;
     archivo << "graph [rankdir=LR]" << endl;
 
+
     auxImprimir(archivo); //Recorre la matriz para imprimir el grafico
 
     archivo << "}" << endl;
@@ -117,11 +124,14 @@ void GrafoMatriz::auxImprimir(ofstream &archivo) {
 
     for (int i = 0; i < numVerts ; ++i) {
         for (int j = 0; j <numVerts ; ++j) {
+            if (j == i)
+                break;
 
-            if(matriz[i][j] > 0){
+
+            if(matriz[i][j] < infinito && matriz[i][j] != 0){
 
                 archivo <<  verts[i].nombre << " -> " << verts[j].nombre;
-                archivo << "[label=" << matriz[i][j] << "];"<< endl;
+                archivo << " [label=" << matriz[i][j] << "];"<< endl;
             }
 
         }
